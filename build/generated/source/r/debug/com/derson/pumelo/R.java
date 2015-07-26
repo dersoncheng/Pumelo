@@ -1745,14 +1745,18 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a000f;
         public static final int action_settings=0x7f0a0010;
         public static final int app_name=0x7f0a0011;
-        public static final int hello_world=0x7f0a0012;
-        public static final int pull_to_refresh_from_bottom_pull_label=0x7f0a0013;
-        public static final int pull_to_refresh_from_bottom_refreshing_label=0x7f0a0014;
-        public static final int pull_to_refresh_from_bottom_release_label=0x7f0a0015;
-        public static final int pull_to_refresh_pull_label=0x7f0a0016;
-        public static final int pull_to_refresh_refreshing_label=0x7f0a0017;
-        public static final int pull_to_refresh_release_label=0x7f0a0018;
-        public static final int pull_to_refresh_tap_label=0x7f0a0019;
+        public static final int data_parser_error=0x7f0a0012;
+        public static final int hello_world=0x7f0a0013;
+        public static final int network_common_error=0x7f0a0014;
+        public static final int pull_to_refresh_from_bottom_pull_label=0x7f0a0015;
+        public static final int pull_to_refresh_from_bottom_refreshing_label=0x7f0a0016;
+        public static final int pull_to_refresh_from_bottom_release_label=0x7f0a0017;
+        public static final int pull_to_refresh_pull_label=0x7f0a0018;
+        public static final int pull_to_refresh_refreshing_label=0x7f0a0019;
+        public static final int pull_to_refresh_release_label=0x7f0a001a;
+        public static final int pull_to_refresh_tap_label=0x7f0a001b;
+        public static final int server_error=0x7f0a001c;
+        public static final int timeout_error=0x7f0a001d;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0b0000;

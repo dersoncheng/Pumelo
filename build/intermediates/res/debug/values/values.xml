@@ -240,7 +240,9 @@
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">Pumelo</string>
+    <string name="data_parser_error">数据解析错误!</string>
     <string name="hello_world">Hello world!</string>
+    <string name="network_common_error">网络异常,稍后请重试!</string>
     <!-- From: file:/Users/chengli/Desktop/GitHub代码库/Pumelo/res/values/pull_refresh_strings.xml -->
     <eat-comment/>
     <string name="pull_to_refresh_from_bottom_pull_label">向下拉动可以刷新</string>
@@ -250,6 +252,10 @@
     <string name="pull_to_refresh_refreshing_label" translatable="false">加载中…</string>
     <string name="pull_to_refresh_release_label" translatable="false">松开可以刷新</string>
     <string name="pull_to_refresh_tap_label" translatable="false">点击刷新</string>
+    <!-- From: file:/Users/chengli/Desktop/GitHub代码库/Pumelo/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="server_error">网络连接失败,请稍后再试!</string>
+    <string name="timeout_error">网络连接超时,请稍后再试!</string>
     <!-- From: file:/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>

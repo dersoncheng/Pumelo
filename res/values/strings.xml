@@ -5,4 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Http 错误信息提示-->
+    <string name="network_common_error">网络异常,稍后请重试!</string>
+    <string name="timeout_error">网络连接超时,请稍后再试!</string>
+    <string name="server_error">网络连接失败,请稍后再试!</string>
+    <string name="data_parser_error">数据解析错误!</string>
 </resources>

@@ -1,0 +1,5 @@
+/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/classes/debug
+/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-1569de37e61f8863fe7494b23fad322808b1615d.jar
+/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-8b0e4d5ada69046d21303aba01957f9743f31c59.jar
+/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-5fee61abc1f4c175a2297a50ed4abb80ddbad275.jar
+/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-949538d175dbf6933257a0508d1121174fb67721.jar

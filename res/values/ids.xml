@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="selected_view" type="id"/>
+    <item type="id" name="drag_handle" />
+    <item type="id" name="click_remove" />
+    <item type="id" name="loading_error_text"/>
+    <item type="id" name="footer_text"/>
+    <item type="id" name="volume_btn"/>
+    <item type="id" name="innerfragment"/>
+    <item type="id" name="pinned_first_header"/>
+    <item type="id" name="pinned_second_header"/>
+    <item name="tab_host" type="id" />
+    <item name="tab_host_index" type="id" />
+    <item name="tab_host_continar" type="id" />
+</resources>

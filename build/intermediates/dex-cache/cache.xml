@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/chengli/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.4.0/5b72bf48563ea8410e650de14aa33ff69a3e8c35/okio-1.4.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/okio-1.4.0-7bde61023b1c91c7cf0252915147073fe58efb2d.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-949538d175dbf6933257a0508d1121174fb67721.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-8b0e4d5ada69046d21303aba01957f9743f31c59.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.6.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="27ebd5d2c69a1830b4ff47a1d5d4c6a4aab5e233">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-5d13ef07a11f1f8d630692dc3bbfc06621747688.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.6.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="d572f92ecb6ae3b66e807550b07e4a6cca1f737f">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-73cbec962373e422dc88158e2f95d784ac8df64d.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-5fee61abc1f4c175a2297a50ed4abb80ddbad275.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/libs/location_baidu.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="41c6a49c5150fcf3a4b8e7b26b23e3c35d81440b">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/location_baidu-5887b0e1546575f5f6c6c88b497eb8d43d4bee21.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/library-2.4.0-f3864420cecb61a7b643f62ac80ac3001f4f62c0.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-d720f3074e74a91b2cb29d27a9d3c15e4f862dd2.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-1569de37e61f8863fe7494b23fad322808b1615d.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.4.0/40340c0748190fe897baf7bffbc1b282734294e5/okhttp-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/okhttp-2.4.0-b0a12f7a5f67f9f8f563cf6c3cfe66772b14ddec.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.6.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="87bffaacf21eb2c6fc61cf01930ff96ae175e798">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-f337594e24cd40e084031eaf5825c73d4cfb2f7d.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp-urlconnection/2.4.0/a0c195f14cefc7597e0bebf22c3e7b43920dcf4/okhttp-urlconnection-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="0a0c195f14cefc7597e0bebf22c3e7b43920dcf4">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/okhttp-urlconnection-2.4.0-b983f302a8e2c05996fe03a35317ae0c8d7b2fb1.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/gson-2.3.1-945ce2ca02bfcda1b48b2d68db2b3bed3f6c9a06.jar" />
+    </item>
+    <item
+        jar="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.6.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="b5eb6c5f132d34f7ece3fbae25feb43e4ea9d6aa">
+        <dex dex="/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/pre-dexed/debug/classes-94c58b33de5804f22279289aa1508cbb43c19341.jar" />
+    </item>
+
+</items>

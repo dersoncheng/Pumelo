@@ -21,6 +21,30 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.6.0'
 }
 
+/**
+ * .so文件的导入
+ */
+task copyNativeLibs(type: Copy) {
+    from fileTree(dir: 'libs', include: 'armeabi/*.so') into 'build/lib'
+    from fileTree(dir: 'libs', include: 'armeabi-v7a/*.so') into 'build/lib'
+    from fileTree(dir: 'libs', include: 'mips/*.so') into 'build/lib'
+    from fileTree(dir: 'libs', include: 'x86/*.so') into 'build/lib'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn copyNativeLibs
+//        modify_env.execute()
+}
+clean.dependsOn 'cleanCopyNativeLibs'
+tasks.withType(com.android.build.gradle.tasks.PackageApplication) { pkgTask ->
+    pkgTask.jniFolders = [new File(buildDir, 'lib')]
+}
+
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.0"

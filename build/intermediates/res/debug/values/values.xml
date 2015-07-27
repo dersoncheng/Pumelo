@@ -53,6 +53,11 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <!-- From: file:/Users/chengli/Desktop/GitHub代码库/Pumelo/res/values/color.xml -->
+    <eat-comment/>
+    <color name="progbar_bar_bg">#ff4545</color>
+    <!-- From: file:/Users/chengli/Desktop/GitHub代码库/Pumelo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="ripple_material_dark">#40ffffff</color>
     <color name="ripple_material_light">#40000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>

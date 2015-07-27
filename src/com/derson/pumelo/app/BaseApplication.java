@@ -2,6 +2,7 @@ package com.derson.pumelo.app;
 
 import android.app.Application;
 
+import com.derson.pumelo.location.LocationManager;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
@@ -24,5 +25,6 @@ public class BaseApplication extends Application {
         instance = this;
         //初始化图片加载器
         Fresco.initialize(this);
+        LocationManager.getInstance().init();
     }
 }

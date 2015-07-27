@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="location_baidu">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/location_baidu.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

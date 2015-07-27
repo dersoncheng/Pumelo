@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.derson.pumelo.R;
+import com.derson.pumelo.app.BaseApplication;
 
 /**
  * 弹浮层工具类
@@ -19,12 +20,12 @@ import com.derson.pumelo.R;
  */
 public class ToastUtil {
 
-	public static Toast showInCenter(Context context, String message) {
+	public static Toast showInCenter(String message) {
 		if (TextUtils.isEmpty(message)) {
 			message = "";
 		}
-		Toast toast = new Toast(context);
-		View view = LayoutInflater.from(context).inflate(R.layout.common_toast, null);
+		Toast toast = new Toast(BaseApplication.getInstance());
+		View view = LayoutInflater.from(BaseApplication.getInstance()).inflate(R.layout.common_toast, null);
 		TextView tv = (TextView) view.findViewById(R.id.toast_message);
 		tv.setText(message);
 		toast.setView(view);
@@ -34,12 +35,12 @@ public class ToastUtil {
 		return toast;
 	}
 
-	public static void showInBottom(Context context, String message) {
+	public static void showInBottom(String message) {
 		if (TextUtils.isEmpty(message)) {
 			return;
 		}
-		Toast toast = new Toast(context);
-		View view = LayoutInflater.from(context).inflate(R.layout.common_toast, null);
+		Toast toast = new Toast(BaseApplication.getInstance());
+		View view = LayoutInflater.from(BaseApplication.getInstance()).inflate(R.layout.common_toast, null);
 		TextView tv = (TextView) view.findViewById(R.id.toast_message);
 		tv.setText(message);
 		toast.setView(view);

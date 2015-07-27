@@ -7,7 +7,6 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.baidu.location.BDNotifyListener;//假如用到位置提醒功能，需要import该类
 import com.derson.pumelo.app.BaseApplication;
 
 /**
@@ -19,6 +18,7 @@ public class LocationManager {
 
     public static final String LOCATION_SUCCESS = "location_success";
     public static final String LOCATION_FAIL = "location_fail";
+    public static final String LOCATION_DATA = "location_data";
     /**
      * 单例对象
      */
@@ -32,14 +32,13 @@ public class LocationManager {
         @Override
         public void onReceiveLocation(BDLocation bdLocation) {
             switch (bdLocation.getLocType()) {
-                case BDLocation.TypeGpsLocation:
                 case BDLocation.TypeNetWorkLocation:
-                case BDLocation.TypeOffLineLocation:
                     location = bdLocation;
                     Intent localIntent = new Intent();
                     localIntent.setAction(LOCATION_SUCCESS);
-                    localIntent.putExtra("location", location);
+                    localIntent.putExtra(LOCATION_DATA, location);
                     LocalBroadcastManager.getInstance(BaseApplication.getInstance()).sendBroadcast(localIntent);
+                    locationClient.stop();
                     break;
 
                 case BDLocation.TypeOffLineLocationNetworkFail:
@@ -47,6 +46,7 @@ public class LocationManager {
                     Intent localIntent2 = new Intent();
                     localIntent2.setAction(LOCATION_FAIL);
                     LocalBroadcastManager.getInstance(BaseApplication.getInstance()).sendBroadcast(localIntent2);
+                    locationClient.stop();
                     break;
 
             }
@@ -76,7 +76,7 @@ public class LocationManager {
         LocationClientOption option = new LocationClientOption();
         option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
         option.setIsNeedAddress(true);
-        option.setOpenGps(true);
+//        option.setOpenGps(true);
         locationClient.setLocOption(option);
         locationClient.registerLocationListener(locationListener);
     }

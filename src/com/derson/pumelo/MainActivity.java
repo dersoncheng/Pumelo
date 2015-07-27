@@ -5,19 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.derson.pumelo.location.LocationManager;
 import com.derson.pumelo.util.ToastUtil;
 import com.derson.pumelo.widget.ProgressWheel;
-
-import org.w3c.dom.Text;
-
-import java.io.Serializable;
 
 public class MainActivity extends BaseActivty {
 
@@ -29,7 +23,7 @@ public class MainActivity extends BaseActivty {
         public void onReceive(Context context, Intent intent) {
             if(null != intent) {
                 if(intent.getAction().equals(LocationManager.LOCATION_SUCCESS)) {
-                    BDLocation location = (BDLocation)intent.getParcelableExtra("location");
+                    BDLocation location = (BDLocation)intent.getParcelableExtra(LocationManager.LOCATION_DATA);
                     ToastUtil.showInCenter("定位成功");
                     progressWheel.stopSpinning();
                     textView.setText(location.getAddrStr());

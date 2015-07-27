@@ -15,6 +15,14 @@ uses-sdk
 ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:appcompat-v7:22.0.0:20:5
 MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.facebook.fresco:fresco:0.6.0:5:5
+MERGED from com.facebook.fresco:drawee:0.6.0:5:5
+MERGED from com.facebook.fresco:fbcore:0.6.0:5:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.facebook.fresco:fbcore:0.6.0:5:5
+MERGED from com.facebook.fresco:imagepipeline:0.6.0:5:5
+MERGED from com.facebook.fresco:fbcore:0.6.0:5:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:9:9
 	android:minSdkVersion
@@ -23,27 +31,31 @@ application
 ADDED from AndroidManifest.xml:11:5
 MERGED from com.android.support:appcompat-v7:22.0.0:22:5
 MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
 	android:label
-		ADDED from AndroidManifest.xml:14:9
-	android:allowBackup
-		ADDED from AndroidManifest.xml:12:9
-	android:icon
-		ADDED from AndroidManifest.xml:13:9
-	android:theme
 		ADDED from AndroidManifest.xml:15:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:13:9
+	android:icon
+		ADDED from AndroidManifest.xml:14:9
+	android:theme
+		ADDED from AndroidManifest.xml:16:9
+	android:name
+		ADDED from AndroidManifest.xml:12:9
 activity#com.derson.pumelo.MainActivity
-ADDED from AndroidManifest.xml:16:9
+ADDED from AndroidManifest.xml:17:9
 	android:label
+		ADDED from AndroidManifest.xml:19:13
+	android:name
 		ADDED from AndroidManifest.xml:18:13
-	android:name
-		ADDED from AndroidManifest.xml:17:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:19:13
+ADDED from AndroidManifest.xml:20:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:20:17
+ADDED from AndroidManifest.xml:21:17
 	android:name
-		ADDED from AndroidManifest.xml:20:25
+		ADDED from AndroidManifest.xml:21:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:22:17
+ADDED from AndroidManifest.xml:23:17
 	android:name
-		ADDED from AndroidManifest.xml:22:27
+		ADDED from AndroidManifest.xml:23:27

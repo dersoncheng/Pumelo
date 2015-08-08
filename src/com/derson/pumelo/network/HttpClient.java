@@ -1,6 +1,7 @@
 package com.derson.pumelo.network;
 
 import com.derson.pumelo.app.BaseApplication;
+import com.derson.pumelo.network.volley.Request;
 import com.derson.pumelo.network.volley.RequestQueue;
 import com.derson.pumelo.network.volley.Response;
 import com.derson.pumelo.network.volley.toolbox.GsonRequest;
@@ -35,6 +36,10 @@ public class HttpClient {
 
     private HttpClient() {
         mRequestQueue = Volley.newRequestQueue(BaseApplication.getInstance());
+    }
+
+    public RequestQueue getRequestQueue(){
+        return this.mRequestQueue;
     }
 
     /**

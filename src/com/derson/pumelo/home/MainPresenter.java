@@ -1,20 +1,47 @@
 package com.derson.pumelo.home;
 
 import android.content.Context;
+import com.baidu.location.BDLocation;
+import com.derson.pumelo.mvp.BasePresenter;
 
 /**
- * Created by chengli on 15/8/6.
+ * Created by chengli on 15/8/8.
  */
-public interface MainPresenter {
+public class MainPresenter extends BasePresenter implements OnLocationListener{
 
-    /**
-     * 初始定位
-     *
-     * @param context
-     */
-    public void initLoacation(Context context);
+    private MainView mainView;
+    private MainInteractor mainInteractor;
 
-    public void quit();
+    public MainPresenter(MainView mainView) {
+        this.mainView = mainView;
+        this.mainInteractor = new MainInteractor();
+    }
 
-    public void stopLocation();
+
+    public void initLoacation(Context context) {
+        mainInteractor.locate(this);
+    }
+
+    public void quit() {
+        mainInteractor.unlocate(this);
+    }
+
+    public void stopLocation() {
+        mainInteractor.stoplocate();
+    }
+
+    @Override
+    public void onLocateSuccess(BDLocation location) {
+        mainView.showMessage("定位成功");
+        mainView.removeLoading();
+        mainView.displayAddress(location.getAddrStr());
+        stopLocation();
+    }
+
+    @Override
+    public void onLocateFail(int errorType) {
+        mainView.removeLoading();
+        mainView.showMessage("定位失败，请重试");
+        stopLocation();
+    }
 }

@@ -13,7 +13,7 @@ import com.derson.pumelo.util.ToastUtil;
 /**
  * Created by chengli on 15/8/8.
  */
-public class MainPresenterImpl implements MainPresenter{
+public class MainPresenterImpl implements MainPresenter,OnLocationListener{
 
     private MainView mainView;
     private MainInteractor mainInteractor;
@@ -23,29 +23,34 @@ public class MainPresenterImpl implements MainPresenter{
         this.mainInteractor = new MainInteractorImpl();
     }
 
-    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if(null != intent) {
-                if(intent.getAction().equals(LocationManager.LOCATION_SUCCESS)) {
-                    BDLocation location = (BDLocation)intent.getParcelableExtra(LocationManager.LOCATION_DATA);
-                    mainView.showMessage("定位成功");
-                    mainView.removeLoading();
-                    mainView.displayAddress(location.getAddrStr());
-                } else {
-                    mainView.removeLoading();
-                    mainView.showMessage("定位失败，请重试");
-                }
-            }
-        }
-    };
 
     @Override
     public void initLoacation(Context context) {
-        IntentFilter locationFilter = new IntentFilter();
-        locationFilter.addAction(LocationManager.LOCATION_SUCCESS);
-        locationFilter.addAction(LocationManager.LOCATION_FAIL);
-        LocalBroadcastManager.getInstance(context).registerReceiver(broadcastReceiver, locationFilter);
-        mainInteractor.locate();
+        mainInteractor.locate(this);
+    }
+
+    @Override
+    public void quit() {
+        mainInteractor.unlocate(this);
+    }
+
+    @Override
+    public void stopLocation() {
+        mainInteractor.stoplocate();
+    }
+
+    @Override
+    public void onLocateSuccess(BDLocation location) {
+        mainView.showMessage("定位成功");
+        mainView.removeLoading();
+        mainView.displayAddress(location.getAddrStr());
+        stopLocation();
+    }
+
+    @Override
+    public void onLocateFail(int errorType) {
+        mainView.removeLoading();
+        mainView.showMessage("定位失败，请重试");
+        stopLocation();
     }
 }

@@ -13,4 +13,8 @@ public interface MainPresenter {
      * @param context
      */
     public void initLoacation(Context context);
+
+    public void quit();
+
+    public void stopLocation();
 }

@@ -33,6 +33,12 @@ public class MainActivity extends BaseActivty implements MainView{
 	}
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mainPresenter.quit();
+    }
+
+    @Override
     public void showLoading() {
         progressWheel.spin();
     }

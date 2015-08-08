@@ -8,6 +8,9 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.derson.pumelo.app.BaseApplication;
+import com.derson.pumelo.home.OnLocationListener;
+
+import java.util.ArrayList;
 
 /**
  * Created by chengli on 15/7/27.
@@ -15,16 +18,14 @@ import com.derson.pumelo.app.BaseApplication;
  */
 public class LocationManager {
 
-
-    public static final String LOCATION_SUCCESS = "location_success";
-    public static final String LOCATION_FAIL = "location_fail";
-    public static final String LOCATION_DATA = "location_data";
     /**
      * 单例对象
      */
     private static LocationManager locationManager;
 
     private LocationClient locationClient;
+
+    private ArrayList<OnLocationListener> listeners;
 
     private BDLocation location;
 
@@ -34,19 +35,20 @@ public class LocationManager {
             switch (bdLocation.getLocType()) {
                 case BDLocation.TypeNetWorkLocation:
                     location = bdLocation;
-                    Intent localIntent = new Intent();
-                    localIntent.setAction(LOCATION_SUCCESS);
-                    localIntent.putExtra(LOCATION_DATA, location);
-                    LocalBroadcastManager.getInstance(BaseApplication.getInstance()).sendBroadcast(localIntent);
-                    locationClient.stop();
+                    if(null != listeners) {
+                        for(OnLocationListener listener : listeners) {
+                            listener.onLocateSuccess(location);
+                        }
+                    }
                     break;
 
                 case BDLocation.TypeOffLineLocationNetworkFail:
                 case BDLocation.TypeOffLineLocationFail:
-                    Intent localIntent2 = new Intent();
-                    localIntent2.setAction(LOCATION_FAIL);
-                    LocalBroadcastManager.getInstance(BaseApplication.getInstance()).sendBroadcast(localIntent2);
-                    locationClient.stop();
+                    if(null != listeners) {
+                        for(OnLocationListener listener : listeners) {
+                            listener.onLocateFail(bdLocation.getLocType());
+                        }
+                    }
                     break;
 
             }
@@ -54,7 +56,7 @@ public class LocationManager {
     };
 
     private LocationManager() {
-
+        listeners = new ArrayList<OnLocationListener>();
     }
 
     public static LocationManager getInstance() {
@@ -82,11 +84,23 @@ public class LocationManager {
         locationClient.registerLocationListener(locationListener);
     }
 
-    public void locate() {
+    public void locate(OnLocationListener listener) {
+        listeners.add(listener);
         if(null != locationClient) {
             locationClient.start();
         }
     }
 
+    public void unlocate(OnLocationListener listener){
+        if(null != listeners) {
+            listeners.remove(listener);
+        }
+    }
+
+    public void stoplocate(){
+        if(null != locationClient) {
+            locationClient.stop();
+        }
+    }
 
 }

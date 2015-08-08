@@ -8,5 +8,9 @@ public interface MainInteractor {
     /**
      * 定位当前位置
      */
-    public void locate();
+    public void locate(OnLocationListener listener);
+
+    public void unlocate(OnLocationListener listener);
+
+    public void stoplocate();
 }

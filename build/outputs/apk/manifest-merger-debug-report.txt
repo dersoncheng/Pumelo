@@ -79,7 +79,7 @@ MERGED from com.android.support:support-v4:22.0.0:22:5
 		ADDED from AndroidManifest.xml:36:9
 	android:name
 		ADDED from AndroidManifest.xml:32:9
-activity#com.derson.pumelo.MainActivity
+activity#com.derson.pumelo.home.MainActivity
 ADDED from AndroidManifest.xml:37:9
 	android:label
 		ADDED from AndroidManifest.xml:39:13

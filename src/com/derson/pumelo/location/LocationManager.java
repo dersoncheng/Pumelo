@@ -77,7 +77,7 @@ public class LocationManager {
         option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
         option.setIsNeedAddress(true);
         option.setScanSpan(0);
-//        option.setOpenGps(true);
+        option.setOpenGps(false);
         locationClient.setLocOption(option);
         locationClient.registerLocationListener(locationListener);
     }

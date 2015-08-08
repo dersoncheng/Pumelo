@@ -1,22 +1,27 @@
-package com.derson.pumelo;
+package com.derson.pumelo.home;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.derson.pumelo.location.LocationManager;
 import com.derson.pumelo.util.ToastUtil;
-import com.derson.pumelo.widget.ProgressWheel;
 
-public class MainActivity extends BaseActivty {
+/**
+ * Created by chengli on 15/8/8.
+ */
+public class MainPresenterImpl implements MainPresenter{
 
-    private TextView textView;
-    private ProgressWheel progressWheel;
+    private MainView mainView;
+    private MainInteractor mainInteractor;
+
+    public MainPresenterImpl(MainView mainView) {
+        this.mainView = mainView;
+        this.mainInteractor = new MainInteractorImpl();
+    }
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -24,27 +29,23 @@ public class MainActivity extends BaseActivty {
             if(null != intent) {
                 if(intent.getAction().equals(LocationManager.LOCATION_SUCCESS)) {
                     BDLocation location = (BDLocation)intent.getParcelableExtra(LocationManager.LOCATION_DATA);
-                    ToastUtil.showInCenter("定位成功");
-                    progressWheel.stopSpinning();
-                    textView.setText(location.getAddrStr());
+                    mainView.showMessage("定位成功");
+                    mainView.removeLoading();
+                    mainView.displayAddress(location.getAddrStr());
                 } else {
-                    ToastUtil.showInCenter("定位失败，请重试");
+                    mainView.removeLoading();
+                    mainView.showMessage("定位失败，请重试");
                 }
             }
         }
     };
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-        LocationManager.getInstance().locate();
-        textView = (TextView)findViewById(R.id.textview);
-        progressWheel = (ProgressWheel)findViewById(R.id.progbar);
-        progressWheel.spin();
+    @Override
+    public void initLoacation(Context context) {
         IntentFilter locationFilter = new IntentFilter();
         locationFilter.addAction(LocationManager.LOCATION_SUCCESS);
         locationFilter.addAction(LocationManager.LOCATION_FAIL);
-        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, locationFilter);
-	}
+        LocalBroadcastManager.getInstance(context).registerReceiver(broadcastReceiver, locationFilter);
+        mainInteractor.locate();
+    }
 }

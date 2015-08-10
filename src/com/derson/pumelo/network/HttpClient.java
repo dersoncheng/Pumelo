@@ -54,7 +54,7 @@ public class HttpClient {
      */
     public <T> void sendRequest(int methodType, int methodId, Response.Listener<T> listener, Response.ErrorListener errorListener, Class<T> clazz) {
         if (null != mRequestQueue) {
-            GsonRequest request = new GsonRequest(methodType, methodId, "", clazz, listener, errorListener);
+            GsonRequest request = new GsonRequest(methodType, "", clazz, listener, errorListener);
             mRequestQueue.add(request);
         }
     }

@@ -48,14 +48,14 @@ public abstract class JsonRequest<T> extends Request<T> {
      *
      * @deprecated Use {@link #JsonRequest(int, String, String, com.derson.pumelo.network.volley.Response.Listener, com.derson.pumelo.network.volley.Response.ErrorListener)}.
      */
-    public JsonRequest(int methodId, String url, String requestBody, Response.Listener<T> listener,
+    public JsonRequest(String url, String requestBody, Response.Listener<T> listener,
             Response.ErrorListener errorListener) {
-        this(Method.DEPRECATED_GET_OR_POST, methodId, url, requestBody, listener, errorListener);
+        this(Method.DEPRECATED_GET_OR_POST, url, requestBody, listener, errorListener);
     }
 
-    public JsonRequest(int method, int methodId, String url, String requestBody, Response.Listener<T> listener,
+    public JsonRequest(int method,String url, String requestBody, Response.Listener<T> listener,
             Response.ErrorListener errorListener) {
-        super(method, methodId, url, errorListener);
+        super(method, url, errorListener);
         mListener = listener;
         mRequestBody = requestBody;
     }

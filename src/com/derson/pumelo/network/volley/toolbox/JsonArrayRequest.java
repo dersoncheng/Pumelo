@@ -43,9 +43,9 @@ public class JsonArrayRequest extends JsonRequest<String> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonArrayRequest(int method, int methodId, String url, String requestBody,
+    public JsonArrayRequest(int method, String url, String requestBody,
                             Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        super(method, methodId,url, requestBody, listener,
+        super(method,url, requestBody, listener,
                 errorListener);
     }
 
@@ -55,8 +55,8 @@ public class JsonArrayRequest extends JsonRequest<String> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonArrayRequest(int methodId,String url, Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        super(Method.GET, methodId,url, null, listener, errorListener);
+    public JsonArrayRequest(String url, Response.Listener<String> listener, Response.ErrorListener errorListener) {
+        super(Method.GET,url, null, listener, errorListener);
     }
 
     /**
@@ -66,23 +66,8 @@ public class JsonArrayRequest extends JsonRequest<String> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonArrayRequest(int method, int methodId,String url, Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        super(method, methodId,url, null, listener, errorListener);
-    }
-
-    /**
-     * Creates a new request.
-     * @param method the HTTP method to use
-     * @param url URL to fetch the JSON from
-     * @param jsonRequest A {@link org.json.JSONArray} to post with the request. Null is allowed and
-     *   indicates no parameters will be posted along with request.
-     * @param listener Listener to receive the JSON response
-     * @param errorListener Error listener, or null to ignore errors.
-     */
-    public JsonArrayRequest(int method, int methodId, String url, JSONArray jsonRequest,
-            Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        super(method, methodId, url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
-                errorListener);
+    public JsonArrayRequest(int method,String url, Response.Listener<String> listener, Response.ErrorListener errorListener) {
+        super(method,url, null, listener, errorListener);
     }
 
     /**
@@ -94,23 +79,12 @@ public class JsonArrayRequest extends JsonRequest<String> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonArrayRequest(int method,int methodId, String url, JSONObject jsonRequest,
+    public JsonArrayRequest(int method, String url, JSONObject jsonRequest,
                             Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        super(method, methodId,url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
+        super(method,url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
                 errorListener);
     }
 
-    /**
-     * Constructor which defaults to <code>GET</code> if <code>jsonRequest</code> is
-     * <code>null</code>, <code>POST</code> otherwise.
-     *
-     * @see #JsonArrayRequest(int, String, org.json.JSONArray, com.derson.pumelo.network.volley.Response.Listener, com.derson.pumelo.network.volley.Response.ErrorListener)
-     */
-    public JsonArrayRequest(int methodId, String url, JSONArray jsonRequest, Response.Listener<String> listener,
-                            Response.ErrorListener errorListener) {
-        this(jsonRequest == null ? Method.GET : Method.POST, methodId, url, jsonRequest,
-                listener, errorListener);
-    }
 
     /**
      * Constructor which defaults to <code>GET</code> if <code>jsonRequest</code> is
@@ -118,9 +92,9 @@ public class JsonArrayRequest extends JsonRequest<String> {
      *
      * @see #JsonArrayRequest(int, String, org.json.JSONObject, com.derson.pumelo.network.volley.Response.Listener, com.derson.pumelo.network.volley.Response.ErrorListener)
      */
-    public JsonArrayRequest(int methodId, String url, JSONObject jsonRequest, Response.Listener<String> listener,
+    public JsonArrayRequest( String url, JSONObject jsonRequest, Response.Listener<String> listener,
                              Response.ErrorListener errorListener) {
-        this(jsonRequest == null ? Method.GET : Method.POST, methodId,url, jsonRequest,
+        this(jsonRequest == null ? Method.GET : Method.POST,url, jsonRequest,
                 listener, errorListener);
     }
 

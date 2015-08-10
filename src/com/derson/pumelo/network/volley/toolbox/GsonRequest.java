@@ -22,9 +22,9 @@ public class GsonRequest<T> extends Request<T> {
     private final Class<T> clazz;
     private final Response.Listener<T> listener;
 
-    public GsonRequest(int method, int methodId, String url, Class<T> clazz,
+    public GsonRequest(int method, String url, Class<T> clazz,
                        Response.Listener<T> listener, Response.ErrorListener errorListener) {
-        super(method, methodId, url, errorListener);
+        super(method, url, errorListener);
         this.clazz = clazz;
         this.listener = listener;
     }

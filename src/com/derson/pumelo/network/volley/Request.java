@@ -66,11 +66,6 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      */
     private final int mMethod;
 
-    /**
-     * Integer value of this request
-     */
-    private final int mMethodId;
-
     /** URL of this request. */
     private final String mUrl;
     
@@ -129,8 +124,8 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      * @deprecated Use {@link #Request(int, String, com.derson.pumelo.network.volley.Response.ErrorListener)} (int, String, com.android.volley.Response.ErrorListener)}.
      */
     @Deprecated
-    public Request(int methodId, String url, Response.ErrorListener listener) {
-        this(Method.DEPRECATED_GET_OR_POST, methodId, url, listener);
+    public Request(String url, Response.ErrorListener listener) {
+        this(Method.DEPRECATED_GET_OR_POST, url, listener);
     }
 
     /**
@@ -139,9 +134,8 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      * delivery of responses is provided by subclasses, who have a better idea of how to deliver
      * an already-parsed response.
      */
-    public Request(int method, int methodId, String url, Response.ErrorListener listener) {
+    public Request(int method, String url, Response.ErrorListener listener) {
         mMethod = method;
-        mMethodId = methodId;
         mUrl = url;
         mIdentifier = createIdentifier(method, url);
         mErrorListener = listener;
@@ -155,10 +149,6 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      */
     public int getMethod() {
         return mMethod;
-    }
-
-    public int getMethodId() {
-        return this.mMethodId;
     }
 
     /**

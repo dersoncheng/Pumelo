@@ -41,9 +41,9 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonObjectRequest(int method, int methodId,String url, String requestBody,
+    public JsonObjectRequest(int method,String url, String requestBody,
                              Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(method, methodId,url, requestBody, listener,
+        super(method,url, requestBody, listener,
                 errorListener);
     }
 
@@ -53,8 +53,8 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonObjectRequest(int methodId,String url, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(Method.GET, methodId,url, null, listener, errorListener);
+    public JsonObjectRequest(String url, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        super(Method.GET,url, null, listener, errorListener);
     }
 
     /**
@@ -64,8 +64,8 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonObjectRequest(int method, int methodId,String url, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(method,methodId, url, null, listener, errorListener);
+    public JsonObjectRequest(int method,String url, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        super(method, url, null, listener, errorListener);
     }
 
     /**
@@ -77,9 +77,9 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonObjectRequest(int method, int methodId, String url, JSONObject jsonRequest,
+    public JsonObjectRequest(int method, String url, JSONObject jsonRequest,
             Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(method, methodId,url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
+        super(method,url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
                 errorListener);
     }
 
@@ -89,9 +89,9 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      *
      * @see #JsonObjectRequest(int, String, org.json.JSONObject, com.derson.pumelo.network.volley.Response.Listener, com.derson.pumelo.network.volley.Response.ErrorListener)
      */
-    public JsonObjectRequest(int methodId, String url, JSONObject jsonRequest, Response.Listener<JSONObject> listener,
+    public JsonObjectRequest( String url, JSONObject jsonRequest, Response.Listener<JSONObject> listener,
             Response.ErrorListener errorListener) {
-        this(jsonRequest == null ? Method.GET : Method.POST, methodId,url, jsonRequest,
+        this(jsonRequest == null ? Method.GET : Method.POST,url, jsonRequest,
                 listener, errorListener);
     }
 
